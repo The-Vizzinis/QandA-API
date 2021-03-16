@@ -6,10 +6,16 @@ This repository is responsible for the creation of an API for the Front End Caps
 
 ## Table of Contents
 
-### TODO
+### TODO upon completion
 
 ## Description
 
+### TODO upon completion
+
 ## Installation
 
+### TODO upon completion
+
 ## Usage
+
+### TODO upon completion
