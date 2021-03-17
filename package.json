@@ -4,6 +4,7 @@
   "description": "Q and A FEC API",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server/QandA.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1"
   }
 }
