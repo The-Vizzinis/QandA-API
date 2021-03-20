@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// Gets all questions for a specific product
+// gets all questions for a specific product
 app.get('/qa/questions', ( req, res ) => {
 
   //  deconstruct the query property
@@ -177,21 +177,27 @@ app.get('/qa/questions/:question_id/answers', ( req, res ) => {
   //  query for all of the answers
   db.query((SQL_ANSWERS), [question_id])
   .then(resA => {
-    //  for each answer
-    resA.rows[0].results.forEach(answer => {
-      //  if no photos exist for that answer
-      if (answer.photos === null) {
-        //  create an empty array for that photo
-        answer.photos = [];
-      }
-    })
-    //  adjust the array for the page and count number and include the question id
-    //  page and count in the object
-    resA.rows[0].results = resA.rows[0].results.slice(count * (page - 1), count * page);
-    resA.rows[0].question = question_id;
-    resA.rows[0].page = page;
-    resA.rows[0].count = count;
-    //  updat the status and send back the data object
+    //  if there are answers for the question
+    if ( resA.rows[0].results !== null ) {
+      //  for each answer
+      resA.rows[0].results.forEach(answer => {
+        //  if no photos exist for that answer
+        if (answer.photos === null) {
+          //  create an empty array for that photo
+          answer.photos = [];
+        }
+      })
+      //  adjust the array for the page and count number and include the question id
+      //  page and count in the object
+      resA.rows[0].results = resA.rows[0].results.slice(count * (page - 1), count * page);
+      resA.rows[0].question = question_id;
+      resA.rows[0].page = page;
+      resA.rows[0].count = count;
+    } else {
+      //  return an empty object if no answers
+      resA.rows[0].results = {};
+    }
+    //  update the status and send back the data object
     res.status(200);
     res.send(resA.rows[0]);
   })
