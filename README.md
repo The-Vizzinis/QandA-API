@@ -17,6 +17,7 @@ At a minimum the goals to reach was to meet 1 client/second with a latency of < 
 Now that I have my database chosen I started to create a schema for the database. From the format the data was given and how the tables would be interacting together the schema below was created.
 
 <div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/QA-Schema.png" /></div>
+<h6 align="center">Database Schema Design Results</h6>
 
 #### Extract, Transform, and Load ####
 Personally my method of ETL was rather ELT. The extraction was done by the client when they gave us the csv's containing all of the data. Loading was done by creating a schema file to create a database, create the tables shown in the schema, and importing the data into the appropriate tables. Transforming the data was done by querying each column looking for data in a format that doesn't match what is expected (ex: price containing non-number characters or a negative quantity). Part of this transformation was also to identify any duplicate columns. From the millions of rows given there were only about 100 rows that had duplicates or bad information.
@@ -34,6 +35,10 @@ Before moving onto AWS the API was tested using K6 on my local machine. Since my
 
 <div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc questions k6.png" /></div>
 <h6 align="center">K6 Questions Results</h6>
+
+
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc answers k6.png" /></div>
+<h6 align="center">K6 Answers Results</h6>
 
 #### NGINX ####
 #### Loader.io ####
