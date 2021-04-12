@@ -18,3 +18,15 @@ Now that I have my database chosen I started to create a schema for the database
 
 #### Extract, Transform, and Load ####
 Personally my method of ETL was rather ELT. The extraction was done by the client when they gave us the csv's containing all of the data. Loading was done by creating a schema file to create a database, create the tables shown in the schema, and importing the data into the appropriate tables. Transforming the data was done by querying each column looking for data in a format that doesn't match what is expected (ex: price containing non-number characters or a negative quantity). Part of this transformation was also to identify any duplicate columns. From the millions of rows given there were only about 100 rows that had duplicates or bad information.
+
+## Cloud Service ##
+The cloud service chosen to host this application was AWS as it is the service I am most familiary with and know I could accomplish the task assigned by the client. Using AWS T2.micro instances allow me to benchmark the API's efficiency rather than just scaling vertically right away.
+
+## Docker ##
+This application utilizes Docker to prepare the service for scaling in AWS. The advantage of using Docker in this case allows containers to quickly be spun up on AWS instances. Docker also made it very easy to hold multiple images on a single T2 instance allowing me to identify performance boosts by changing small components in the code.
+
+## Testing ##
+### K6 ###
+### NGINX ###
+### Loader.io ###
+### New Relic ###
