@@ -53,5 +53,9 @@ Loader.io was used to test the application once it was moved onto AWS. This serv
 #### NGINX ####
 Upon inital setup of the API it was discovered that a single instance would not be enough to handle the desired load. The results from a single instance was 300 clients/second at a latency of < 100ms and an error rate of 0%. In order to scale a load balancer would have to be used. NGINX was chosen due to its reputation being a well known load balancer. In order to use NGINX as a load balancer more than one server is required. I made a decision to use 5 instances of servers and the reason for this was to test the different routing methods NGINX offers. At this point there are 7 total instances: 5 servers, 1 load balancer, and 1 database. Below shows the results that come from testing each routing method.
 
+
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc routing.png" /></div>
+<h6 align="center">Loader.io Routing Comparison</h6>
+
 #### New Relic ####
 New Relic was leveraged as a way to identify any bottlenecks that were occuring anywhere in the flow of information. This service allowed me to visualize each instances hardware usage displaying which component(s) were the bottleneck. Initially with on isntance the server proved to be the bottleneck. With each new isntance added the load on the database instance and load balancer instance increased. Around 5 server instances is where the database instance began to become the bottleneck. 
