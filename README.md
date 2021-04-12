@@ -14,7 +14,7 @@ For the database, I knew that the front end's requested format in combination wi
 #### Schema ####
 Now that I have my database chosen I started to create a schema for the database. From the format the data was given and how the tables would be interacting together the schema below was created.
 
-<div align="center">![Schema](https://github.com/The-Vizzinis/QandA-API/blob/main/misc/QA-Schema.png)</div>
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/QA-Schema.png" /></div>
 
 #### Extract, Transform, and Load ####
 From the client we were given csv files that contained all of the data contained in their old database. Personally my method of ETL was rather ELT where
