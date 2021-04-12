@@ -9,7 +9,7 @@ Given a legacy front end for an E-Commerce storefront my team and I were tasked 
 For my API I decided to utilize Node.js in combination with Express to allow for easy creation of a backend server as it is what I am most familiary with. 
 
 ## Database ##
-For the database, I knew that the front end's requested format in combination with how the data is given to us in the csv's that a Relational Database Management System would be best. From researching I found that the two choices I wanted to decide between would be PostgreSQL and MySQL as both have very quick read times which is the bulk of the queries made by the front end. Deciding between PostgreSQL and MySQL proved to be challenging but in the end I chose PostgreSQL as it handles concurrency better than MySQL which would be beneficial once we started to scale.
+For the database, I knew that the front end's requested format in combination with how the data is given to us in the csv's that a Relational Database Management System would be best. From researching I found that the two choices I wanted to decide between would be PostgreSQL and MySQL as both have very quick read times which is the bulk of the queries made by the front end. Deciding between PostgreSQL and MySQL proved to be challenging since their performance is so similar but in the end I chose PostgreSQL as it handles concurrency better than MySQL which would be beneficial once we started to scale.
 
 At a minimum the goals to reach was to meet 1 client/second with a latency of < 50ms on your local machine. When scaling the service the goal is to handle 1000 clients/second with a latency of < 2000ms and an error rate < 1%.
 
