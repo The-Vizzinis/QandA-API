@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository is responsible for the creation of an API for the Front End Capstone questions and answers section. The goal is to of this project is to create an application that when deployed on EC2 using a t.2 micro instance can support a minimum of 100 requests per second.
+Given a legacy front end for an E-Commerce storefront my team and I were tasked to redesign the backend in such a way that it could handle web-scale traffic. Due to the setup of the product page the backend APIs were divided into three sections: Overview and Related Products, Ratings and Reviews, and Questions and Answers. I was responsible for the Questions and Answers section. The other members apart of this team was [Eric Hernandez](https://github.com/EricMHernandez) who was in charge of the Overview and Related Products section as well as [John Kwak](https://github.com/johnkwak08) who was responsible for the Ratings and Reviews section.
 
 ## Table of Contents
 **TODO upon completion**
