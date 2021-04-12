@@ -11,6 +11,8 @@ For my API I decided to utilize Node.js in combination with Express to allow for
 ## Database ##
 For the database, I knew that the front end's requested format in combination with how the data is given to us in the csv's that a Relational Database Management System would be best. From researching I found that the two choices I wanted to decide between would be PostgreSQL and MySQL as both have very quick read times which is the bulk of the queries made by the front end. Deciding between PostgreSQL and MySQL proved to be challenging but in the end I chose PostgreSQL as it handles concurrency better than MySQL which would be beneficial once we started to scale.
 
+At a minimum the goals to reach was to meet 1 client/second with a latency of < 50ms on your local machine. When scaling the service the goal is to handle 1000 clients/second with a latency of < 2000ms and an error rate < 1%.
+
 #### Schema ####
 Now that I have my database chosen I started to create a schema for the database. From the format the data was given and how the tables would be interacting together the schema below was created.
 
@@ -27,6 +29,9 @@ This application utilizes Docker to prepare the service for scaling in AWS. The 
 
 ## Testing ##
 #### K6 ####
+Before moving onto AWS the API was tested using K6 on my local machine. Since my machine contains better hardware than a T2.micro instance the goals to reach were set much higher. Shown below are the results from K6 load tests for the Questions endpoint and the Answers endpoint.
+
+
 #### NGINX ####
 #### Loader.io ####
 #### New Relic ####
