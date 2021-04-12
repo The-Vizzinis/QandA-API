@@ -1,11 +1,12 @@
-const { Client } = require('pg');
+const { Pool } = require('pg');
 
 //  create an instance to
-const instance = new Client ({
-  host: 'localhost',
+const instance = new Pool ({
+  host: '35.155.192.125',
   user: 'postgres',
-  password: 'password',
-  database: 'qa_db',
+  password: 'yY2fW4nB7bB2hL8fB3kX7jQ2aO7gH2lN',
+  database: 'postgres',
+  max: 25,
 });
 
 //  connect to the instance and

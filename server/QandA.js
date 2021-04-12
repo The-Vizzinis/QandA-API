@@ -1,14 +1,17 @@
 const db = require('../database/QAinstance');
 const express = require('express');
-const morgan = require('morgan');
-const axios = require('axios');
 const path = require('path');
+const morgan = require('morgan');
 const app = express();
-const PORT = 3000;
+const PORT = 3003;
 
-app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+
+app.get('/loaderio-677a1f4e7e1b60683a1fa267e2e7855a/', (req, res) => {
+  res.send('loaderio-677a1f4e7e1b60683a1fa267e2e7855a');
+});
 
 
 // gets all questions for a specific product
