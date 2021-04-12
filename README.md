@@ -32,6 +32,9 @@ This application utilizes Docker to prepare the service for scaling in AWS. The 
 Before moving onto AWS the API was tested using K6 on my local machine. Since my machine contains better hardware than a T2.micro instance the goals to reach were set much higher. Shown below are the results from K6 load tests for the Questions endpoint and the Answers endpoint.
 
 
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc questions k6.png" /></div>
+<h6 align="center">K6 Questions Results</h6>
+
 #### NGINX ####
 #### Loader.io ####
 #### New Relic ####
