@@ -57,5 +57,14 @@ Upon inital setup of the API it was discovered that a single instance would not 
 <div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc routing.png" /></div>
 <h6 align="center">Loader.io Routing Comparison</h6>
 
+Looking at this information showed that IP hash was the best choice due to the amount of clients/second that I am trying to reach. At 500 clients/second there is no difference between the 3 but as the clients/second increases IP hash starts to come out on top. When the error rate starts to increase the difference between the 3 start to become insignificant again. Since the goal is to scale up to 1000 clients/second with a latency of < 2000ms and an error rate of < 0% IP hash is the chosen routing method.
+
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc questions.png" /></div>
+<h6 align="center">Loader.io Questions Graph</h6>
+
+
+<div align="center"><img src="https://github.com/The-Vizzinis/QandA-API/blob/main/misc/sdc answers.png" /></div>
+<h6 align="center">Loader.io Answers Graph</h6>
+
 #### New Relic ####
 New Relic was leveraged as a way to identify any bottlenecks that were occuring anywhere in the flow of information. This service allowed me to visualize each instances hardware usage displaying which component(s) were the bottleneck. Initially with on isntance the server proved to be the bottleneck. With each new isntance added the load on the database instance and load balancer instance increased. Around 5 server instances is where the database instance began to become the bottleneck. 
