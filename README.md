@@ -26,7 +26,7 @@ The cloud service chosen to host this application was AWS as it is the service I
 This application utilizes Docker to prepare the service for scaling in AWS. The advantage of using Docker in this case allows containers to quickly be spun up on AWS instances. Docker also made it very easy to hold multiple images on a single T2 instance allowing me to identify performance boosts by changing small components in the code.
 
 ## Testing ##
-### K6 ###
-### NGINX ###
-### Loader.io ###
-### New Relic ###
+#### K6 ####
+#### NGINX ####
+#### Loader.io ####
+#### New Relic ####
