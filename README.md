@@ -70,7 +70,7 @@ Looking at this information showed that IP hash was the best choice due to the a
 #### New Relic ####
 New Relic was leveraged as a way to identify any bottlenecks that were occuring anywhere in the flow of information. This service allowed me to visualize each instances hardware usage displaying which component(s) were the bottleneck. Initially with on isntance the server proved to be the bottleneck. With each new isntance added the load on the database instance and load balancer instance increased. Around 5 server instances is where the database instance began to become the bottleneck.
 
-# Possible Imporovements #
+# Possible Improvements #
 Although the current design choice allow the API to handle web-scale traffic there are improvements that could be met. These improvements include...
 <ul>
   <li>Database load balancer</li>
